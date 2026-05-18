@@ -1,0 +1,22 @@
+{
+  "event": "document_state_changed",
+  "data": {
+    "id": "pd_doc_renewal_001",
+    "name": "Acme retainer — renewal 2026",
+    "status": "document.completed",
+    "metadata": {
+      "contract_type": "renewal",
+      "service_type": "retainer",
+      "client_name": "Acme & Co.",
+      "existing_client_id": "cli_acme_001"
+    },
+    "recipients": [
+      {
+        "first_name": "Jane",
+        "last_name": "Client",
+        "email": "jane@acme.example",
+        "role": "ceo"
+      }
+    ]
+  }
+}

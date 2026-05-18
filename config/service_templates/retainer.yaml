@@ -1,0 +1,24 @@
+service_type: retainer
+clickup:
+  template_name: "Retainer — Ongoing"
+  phases:
+    - name: This month
+      tasks:
+        - Planning + priorities
+        - Active work
+        - Status update to client
+    - name: Reporting
+      tasks:
+        - Monthly report
+        - Retro notes
+
+drive:
+  folders:
+    - 00_Retainer_Agreements
+    - 01_Monthly_Briefs
+    - 02_Working_Files
+    - 03_Reports
+
+slack:
+  invite_internal_roles:
+    - account_director

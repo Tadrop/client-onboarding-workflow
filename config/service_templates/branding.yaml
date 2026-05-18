@@ -1,0 +1,38 @@
+service_type: branding
+clickup:
+  template_name: "Branding — Discovery to Delivery"
+  phases:
+    - name: Discovery
+      tasks:
+        - Kickoff call notes
+        - Stakeholder interviews
+        - Audit current brand assets
+    - name: Strategy
+      tasks:
+        - Positioning statement
+        - Audience personas
+        - Tone of voice doc
+    - name: Identity
+      tasks:
+        - Logo concepts (3 routes)
+        - Color system
+        - Type system
+    - name: Delivery
+      tasks:
+        - Brand guidelines PDF
+        - Asset handover
+        - Final invoice
+
+drive:
+  folders:
+    - 01_Discovery
+    - 02_Strategy
+    - 03_Identity
+    - 04_Delivery
+    - 05_Client_Inputs
+
+slack:
+  invite_internal_roles:
+    - account_director
+    - creative_lead
+    - designer

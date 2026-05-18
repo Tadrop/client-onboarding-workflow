@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# Local state
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# Tooling
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Local-only docs (deployment notes, runbooks — never commit)
+DEPLOY.md
+*.local.md
+.local/

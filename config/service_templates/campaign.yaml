@@ -1,0 +1,37 @@
+service_type: campaign
+clickup:
+  template_name: "Campaign — Brief to Launch"
+  phases:
+    - name: Brief
+      tasks:
+        - Campaign objectives
+        - Audience + channels
+        - Success metrics
+    - name: Concept
+      tasks:
+        - Concept routes
+        - Creative review
+    - name: Production
+      tasks:
+        - Asset production
+        - Copy
+        - Approvals
+    - name: Launch
+      tasks:
+        - Channel scheduling
+        - Reporting setup
+        - Wrap report
+
+drive:
+  folders:
+    - 01_Brief
+    - 02_Concept
+    - 03_Production
+    - 04_Launch
+    - 05_Reporting
+
+slack:
+  invite_internal_roles:
+    - account_director
+    - strategist
+    - creative_lead

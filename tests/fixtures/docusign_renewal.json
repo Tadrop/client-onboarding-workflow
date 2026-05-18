@@ -1,0 +1,20 @@
+{
+  "event": "envelope-completed",
+  "envelopeId": "env_docusign_renewal_001",
+  "emailSubject": "Acme retainer renewal — 2026 H1",
+  "status": "completed",
+  "customFields": {
+    "textCustomFields": [
+      {"name": "contract_type", "value": "renewal"},
+      {"name": "service_type", "value": "retainer"},
+      {"name": "client_name", "value": "Acme & Co."},
+      {"name": "existing_client_id", "value": "cli_acme_001"}
+    ],
+    "listCustomFields": []
+  },
+  "recipients": {
+    "signers": [
+      {"name": "Jane Client", "email": "jane@acme.example", "roleName": "ceo"}
+    ]
+  }
+}

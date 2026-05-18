@@ -1,0 +1,9 @@
+# Standard Drive folder structure for any new client.
+# Service-type templates extend this with phase folders.
+root_pattern: "{client_name} — {service_type}"
+standard_subfolders:
+  - 00_Contracts
+  - 01_Brand_Inputs
+  - 02_Working_Files
+  - 03_Deliverables
+  - 04_Internal

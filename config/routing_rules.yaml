@@ -1,0 +1,36 @@
+# ─── New vs Renewal Classifier ───────────────────────────────────────────────
+# The router inspects contract metadata fields (set by the e-sign provider)
+# and applies these rules in order. First match wins. If nothing matches,
+# the contract is treated as `new` (safe default — renewal flow skips comms).
+#
+# Custom fields are normalized to lowercase before matching.
+
+rules:
+  - name: explicit_renewal_field
+    when:
+      field: contract_type
+      equals: renewal
+    classify_as: renewal
+
+  - name: existing_client_id_present
+    when:
+      field: existing_client_id
+      present: true
+    classify_as: renewal
+
+  - name: explicit_new_field
+    when:
+      field: contract_type
+      equals: new
+    classify_as: new
+
+  - name: subject_line_renewal_keyword
+    when:
+      field: envelope_subject
+      contains_any: ["renewal", "retainer renewal", "renew"]
+    classify_as: renewal
+
+# Default when no rule matches. We default to `new` so a misclassified renewal
+# is caught by the AM-review gate (welcome email is a draft), rather than a
+# misclassified new client silently skipping welcome.
+default: new

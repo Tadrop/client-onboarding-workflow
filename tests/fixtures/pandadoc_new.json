@@ -1,0 +1,21 @@
+{
+  "event": "document_state_changed",
+  "data": {
+    "id": "pd_doc_new_001",
+    "name": "Acme & Co. — Web project SoW",
+    "status": "document.completed",
+    "metadata": {
+      "contract_type": "new",
+      "service_type": "web",
+      "client_name": "Acme & Co."
+    },
+    "recipients": [
+      {
+        "first_name": "Jane",
+        "last_name": "Client",
+        "email": "jane@acme.example",
+        "role": "ceo"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "event": "envelope-completed",
+  "envelopeId": "env_docusign_new_001",
+  "emailSubject": "Acme & Co. — Branding SoW",
+  "status": "completed",
+  "customFields": {
+    "textCustomFields": [
+      {"name": "contract_type", "value": "new"},
+      {"name": "service_type", "value": "branding"},
+      {"name": "client_name", "value": "Acme & Co."}
+    ],
+    "listCustomFields": []
+  },
+  "recipients": {
+    "signers": [
+      {"name": "Jane Client", "email": "jane@acme.example", "roleName": "ceo"},
+      {"name": "Sam Client", "email": "sam@acme.example", "roleName": "ops"}
+    ]
+  }
+}

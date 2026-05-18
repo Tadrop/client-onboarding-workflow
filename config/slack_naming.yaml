@@ -1,0 +1,12 @@
+# Slack channel naming convention: {prefix}-{client-slug}-{service-type}
+# - prefix taken from SLACK_CHANNEL_PREFIX env var (default: client)
+# - client-slug derived from client name: lowercase, hyphens, alnum only
+# - service-type: branding | web | campaign | retainer
+# On collision, append "-2", "-3", ... up to max_suffix attempts.
+prefix_env: SLACK_CHANNEL_PREFIX
+default_prefix: client
+max_suffix: 9
+slug:
+  lowercase: true
+  separator: "-"
+  strip_chars: "&,.()/"

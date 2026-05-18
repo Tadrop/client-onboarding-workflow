@@ -1,0 +1,39 @@
+service_type: web
+clickup:
+  template_name: "Web — Design to Launch"
+  phases:
+    - name: Discovery
+      tasks:
+        - Goals and KPIs
+        - Sitemap draft
+        - Tech requirements
+    - name: Design
+      tasks:
+        - Wireframes
+        - Visual design
+        - Design review
+    - name: Build
+      tasks:
+        - Frontend build
+        - CMS setup
+        - QA pass
+    - name: Launch
+      tasks:
+        - DNS + hosting handover
+        - Analytics install
+        - Post-launch support window
+
+drive:
+  folders:
+    - 01_Discovery
+    - 02_Design
+    - 03_Build
+    - 04_Launch
+    - 05_Client_Inputs
+
+slack:
+  invite_internal_roles:
+    - account_director
+    - tech_lead
+    - designer
+    - developer
