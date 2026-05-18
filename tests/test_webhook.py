@@ -25,9 +25,21 @@ def _sign(body: bytes, secret: str) -> str:
     return hmac.new(secret.encode("utf-8"), body, hashlib.sha256).hexdigest()
 
 
+def _docusign_secret() -> str:
+    from src.config import get_settings
+
+    return get_settings().docusign_webhook_secret
+
+
+def _pandadoc_secret() -> str:
+    from src.config import get_settings
+
+    return get_settings().pandadoc_webhook_secret
+
+
 def test_docusign_new_webhook_starts_run(client) -> None:
     body = (FIXTURES / "docusign_new.json").read_bytes()
-    sig = _sign(body, "test-secret-docusign")
+    sig = _sign(body, _docusign_secret())
     resp = client.post(
         "/webhooks/docusign",
         content=body,
@@ -55,7 +67,7 @@ def test_docusign_invalid_signature_rejected(client) -> None:
 
 def test_pandadoc_new_webhook_starts_run(client) -> None:
     body = (FIXTURES / "pandadoc_new.json").read_bytes()
-    sig = _sign(body, "test-secret-pandadoc")
+    sig = _sign(body, _pandadoc_secret())
     resp = client.post(
         "/webhooks/pandadoc",
         content=body,
@@ -67,7 +79,7 @@ def test_pandadoc_new_webhook_starts_run(client) -> None:
 
 def test_pandadoc_renewal_skips_welcome(client) -> None:
     body = (FIXTURES / "pandadoc_renewal.json").read_bytes()
-    sig = _sign(body, "test-secret-pandadoc")
+    sig = _sign(body, _pandadoc_secret())
     resp = client.post(
         "/webhooks/pandadoc",
         content=body,
@@ -83,7 +95,7 @@ def test_pandadoc_renewal_skips_welcome(client) -> None:
 
 def test_approval_endpoint_advances_pipeline(client) -> None:
     body = (FIXTURES / "docusign_new.json").read_bytes()
-    sig = _sign(body, "test-secret-docusign")
+    sig = _sign(body, _docusign_secret())
     resp = client.post(
         "/webhooks/docusign",
         content=body,
